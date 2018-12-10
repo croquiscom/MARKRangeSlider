@@ -1,6 +1,8 @@
+#import "MARKRangeSlider.h"
+
 @import UIKit;
 
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController<MARKRangeSliderDelegate>
 
 @end
 

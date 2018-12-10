@@ -1,5 +1,4 @@
 #import "ViewController.h"
-#import "MARKRangeSlider.h"
 #import "UIColor+Demo.h"
 
 static CGFloat const kViewControllerRangeSliderWidth = 290.0;
@@ -59,6 +58,7 @@ static CGFloat const kViewControllerLabelWidth = 100.0;
 
     // Init slider
     self.rangeSlider = [[MARKRangeSlider alloc] initWithFrame:CGRectZero];
+    self.rangeSlider.delegate = self;
     self.rangeSlider.backgroundColor = [UIColor backgroundColor];
     [self.rangeSlider addTarget:self
                          action:@selector(rangeSliderValueDidChange:)
@@ -80,6 +80,14 @@ static CGFloat const kViewControllerLabelWidth = 100.0;
     NSLog(@"%0.2f - %0.2f", self.rangeSlider.leftValue, self.rangeSlider.rightValue);
     self.label.text = [NSString stringWithFormat:@"%0.2f - %0.2f",
                        self.rangeSlider.leftValue, self.rangeSlider.rightValue];
+}
+
+#pragma mark - MARKRangeSliderDelegate
+
+- (void)onHandlePanGesture:(UIView *)sender recognizer:(UIPanGestureRecognizer *)recognizer {
+    BOOL isLeftThumb = sender == self.rangeSlider.leftThumbView;
+    BOOL isRightThumb = sender == self.rangeSlider.rightThumbView;
+    NSLog(@"isLeft : %s, isRight : %s, state : %ld", isLeftThumb ? "YES" : "NO", isRightThumb ? "YES" : "NO", (long)recognizer.state);
 }
 
 @end
