@@ -1,6 +1,13 @@
 #import <UIKit/UIKit.h>
 
+@protocol MARKRangeSliderDelegate
+- (void) onHandlePanGesture:(UIView *)sender recognizer:(UIPanGestureRecognizer *)recognizer;
+@end
+
 @interface MARKRangeSlider : UIControl
+
+// delegate
+@property (nonatomic, weak) id <MARKRangeSliderDelegate> delegate;
 
 // Values
 @property (nonatomic, assign, readonly) CGFloat minimumValue;

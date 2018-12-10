@@ -16,6 +16,8 @@ static NSString * const kMARKRangeSliderTrackRangeImage = @"rangeSliderTrackRang
 
 @implementation MARKRangeSlider
 
+@synthesize delegate;
+
 @synthesize trackImage = _trackImage;
 @synthesize rangeImage = _rangeImage;
 @synthesize leftThumbImage = _leftThumbImage;
@@ -200,6 +202,7 @@ static NSString * const kMARKRangeSliderTrackRangeImage = @"rangeSliderTrackRang
 
         [self sendActionsForControlEvents:UIControlEventValueChanged];
     }
+    [delegate onHandlePanGesture:self.leftThumbImageView recognizer:gesture];
 }
 
 - (void)handleRightPan:(UIPanGestureRecognizer *)gesture
@@ -219,6 +222,7 @@ static NSString * const kMARKRangeSliderTrackRangeImage = @"rangeSliderTrackRang
 
         [self sendActionsForControlEvents:UIControlEventValueChanged];
     }
+    [self.delegate onHandlePanGesture:self.rightThumbImageView recognizer:gesture];
 }
 
 #pragma mark - Getters
