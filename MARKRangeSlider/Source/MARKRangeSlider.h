@@ -1,4 +1,11 @@
+#import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
+
+//! Project version number for MARKRangeSlider.
+FOUNDATION_EXPORT double MARKRangeSliderVersionNumber;
+
+//! Project version string for MARKRangeSlider.
+FOUNDATION_EXPORT const unsigned char MARKRangeSliderVersionString[];
 
 @protocol MARKRangeSliderDelegate
 - (void) onHandlePanGesture:(UIView *)sender recognizer:(UIPanGestureRecognizer *)recognizer;
@@ -36,3 +43,6 @@
 - (void)setLeftValue:(CGFloat)leftValue rightValue:(CGFloat)rightValue;
 
 @end
+
+
+

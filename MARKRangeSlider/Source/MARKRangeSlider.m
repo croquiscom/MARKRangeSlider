@@ -424,8 +424,7 @@ static NSString * const kMARKRangeSliderTrackRangeImage = @"rangeSliderTrackRang
 
 - (UIImage *)bundleImageNamed:(NSString *)imageName
 {
-    NSString *bundlePath = [[[NSBundle bundleForClass:self.class] resourcePath]
-                            stringByAppendingPathComponent:@"MARKRangeSlider.bundle"];
+    NSString *bundlePath = [[NSBundle bundleForClass:self.class] resourcePath];
     NSBundle *bundle = [NSBundle bundleWithPath: bundlePath];
     if ([UITraitCollection class]) {
         // Use default traits associated with main screen

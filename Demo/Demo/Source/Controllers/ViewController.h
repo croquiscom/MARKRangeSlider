@@ -1,4 +1,4 @@
-#import "MARKRangeSlider.h"
+#import "MARKRangeSlider/MARKRangeSlider.h"
 
 @import UIKit;
 

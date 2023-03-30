@@ -2,9 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:Demo.xcodeproj">
+      location = "group:../MARKRangeSlider.xcodeproj">
    </FileRef>
    <FileRef
-      location = "group:Pods/Pods.xcodeproj">
+      location = "container:Demo.xcodeproj">
    </FileRef>
 </Workspace>
